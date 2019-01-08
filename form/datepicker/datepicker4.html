@@ -1,0 +1,30 @@
+<script src="//unpkg.com/vue/dist/vue.js"></script>
+<script src="//unpkg.com/element-ui@2.4.11/lib/index.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<div id="app">
+  <!--5.默认显示日期
+  在选择日期范围时，指定起始日期和结束日期的默认时刻。
+  选择日期范围时，默认情况下，起始日期和结束日期的时间部分均为当天的 0 点 0 分 0 秒。通过default-time可以分别指定二者的具体时刻。default-time接受一个数组，其中的值为形如12:00:00的字符串，第一个值控制起始日期的时刻，第二个值控制结束日期的时刻。-->
+  <div class="block">
+    <p>组件值：{{ value13 }}</p>
+    <el-date-picker
+      v-model="value13"
+      type="daterange"
+      start-placeholder="开始日期"
+      end-placeholder="结束日期"
+      :default-time="['00:00:00', '23:59:59']">
+    </el-date-picker>
+  </div>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        value13: ''
+      };
+    }
+  })
+</script>
+

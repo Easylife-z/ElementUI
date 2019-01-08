@@ -1,0 +1,54 @@
+<script src="//unpkg.com/vue/dist/vue.js"></script>
+<script src="//unpkg.com/element-ui@2.4.11/lib/index.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<div id="app">
+  <!--4.日期格式
+  使用format指定输入框的格式；使用value-format指定绑定值的格式。
+默认情况下，组件接受并返回Date对象。-->
+  <div class="block">
+    <span class="demonstration">默认为 Date 对象</span>
+    <div class="demonstration">值：{{ value10 }}</div>
+    <el-date-picker
+      v-model="value10"
+      type="date"
+      placeholder="选择日期"
+      format="yyyy 年 MM 月 dd 日">
+    </el-date-picker>
+  </div>
+  <div class="block">
+    <span class="demonstration">使用 value-format</span>
+    <div class="demonstration">值：{{ value11 }}</div>
+    <el-date-picker
+      v-model="value11"
+      type="date"
+      placeholder="选择日期"
+      format="yyyy 年 MM 月 dd 日"
+      value-format="yyyy-MM-dd">
+    </el-date-picker>
+  </div>
+  <div class="block">
+    <span class="demonstration">时间戳</span>
+    <div class="demonstration">值：{{ value12 }}</div>
+    <el-date-picker
+      v-model="value12"
+      type="date"
+      placeholder="选择日期"
+      format="yyyy 年 MM 月 dd 日"
+      value-format="timestamp">
+    </el-date-picker>
+  </div>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        value10: '',
+        value11: '',
+        value12: ''
+      };
+    }
+  })
+</script>
+
