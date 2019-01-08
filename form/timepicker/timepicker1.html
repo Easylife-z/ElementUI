@@ -1,0 +1,36 @@
+<script src="//unpkg.com/vue/dist/vue.js"></script>
+<script src="//unpkg.com/element-ui@2.4.11/lib/index.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<div id="app">
+  <!--2.可以选择任意时间
+  使用 el-time-picker 标签，通过selectableRange限制可选时间范围。提供了两种交互方式：默认情况下通过鼠标滚轮进行选择，打开arrow-control属性则通过界面上的箭头进行选择。-->
+
+  <el-time-picker
+    v-model="value2"
+    :picker-options="{
+      selectableRange: '18:30:00 - 20:30:00'
+    }"
+    placeholder="任意时间点">
+  </el-time-picker>
+  <el-time-picker
+    arrow-control
+    v-model="value3"
+    :picker-options="{
+      selectableRange: '18:30:00 - 20:30:00'
+    }"
+    placeholder="任意时间点">
+  </el-time-picker>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        value2: new Date(2016, 9, 10, 18, 40),
+        value3: new Date(2016, 9, 10, 18, 40)
+      };
+    }
+  })
+</script>
+

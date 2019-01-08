@@ -1,0 +1,30 @@
+<script src="//unpkg.com/vue/dist/vue.js"></script>
+<script src="//unpkg.com/element-ui@2.4.11/lib/index.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<div id="app">
+  <!--TimePicker 时间选择器：用于选择或输入日期
+  1.提供几个固定的时间点供用户选择
+  使用 el-time-select 标签，分别通过star、end和step指定可选的起始时间、结束时间和步长-->
+
+  <el-time-select
+    v-model="value1"
+    :picker-options="{
+    start: '08:30',
+    step: '00:15',
+    end: '18:30'
+  }"
+    placeholder="选择时间">
+  </el-time-select>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        value1: ''
+      };
+    }
+  })
+</script>
+

@@ -1,0 +1,40 @@
+<script src="//unpkg.com/vue/dist/vue.js"></script>
+<script src="//unpkg.com/element-ui@2.4.11/lib/index.js"></script>
+<link rel="stylesheet" href="https://unpkg.com/element-ui/lib/theme-chalk/index.css">
+<div id="app">
+  <!--3.固定时间范围
+ 若先选择开始时间，则结束时间内备选项的状态会随之改变-->
+
+  <el-time-select
+    placeholder="起始时间"
+    v-model="startTime"
+    :picker-options="{
+      start: '08:30',
+      step: '00:15',
+      end: '18:30'
+    }">
+  </el-time-select>
+  <el-time-select
+    placeholder="结束时间"
+    v-model="endTime"
+    :picker-options="{
+      start: '08:30',
+      step: '00:15',
+      end: '18:30',
+      minTime: startTime
+    }">
+  </el-time-select>
+</div>
+
+<script>
+  new Vue({
+    el: '#app',
+    data() {
+      return {
+        startTime: '',
+        endTime: ''
+      };
+    }
+  })
+</script>
+
